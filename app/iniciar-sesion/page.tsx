@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { Header } from '../../components/header'
-import { Footer } from '../../components/footer'
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { useToast } from "@/components/use-toast"
-import { ToastProvider } from "@/components/toast"
+import { Header } from '../components/header'
+import { Footer } from '../components/footer'
+import { Input } from "@/app/components/ui/input"
+import { Button } from "@/app/components/ui/button"
+import { Card, CardHeader, CardTitle, CardContent } from "@/app/components/ui/card"
+import { useToast } from "@/app/components/use-toast"
+import { ToastProvider } from "@/app/components/ui/toast"
 
 // Array de correos y contraseñas permitidos
 const allowedEmails = ['wilsone@uninorte.edu.co']

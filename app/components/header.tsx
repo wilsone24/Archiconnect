@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Button } from "@/components/ui/button"
+import { Button } from "@/app/components/ui/button"
 import { usePathname } from 'next/navigation'
 
 export function Header() {
@@ -23,6 +23,13 @@ export function Header() {
             <li><Link href="/sobre-nosotros" className="text-gray-600 hover:text-gray-800">Sobre Nosotros</Link></li>
             {isLoggedIn && (
               <li><Link href="/buscar" className="text-gray-600 hover:text-gray-800">Buscar Profesionales</Link></li>
+            )}
+            {isLoggedIn && (
+              <li>
+                <Link href="/reclutamiento" className="text-gray-600 hover:text-gray-800">
+                  Proceso de Reclutamiento
+                </Link>
+              </li>
             )}
           </ul>
         </nav>
