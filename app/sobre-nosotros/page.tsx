@@ -12,7 +12,7 @@ export default function SobreNosotros() {
     { name: "Ana Quesada", role: "COO", image: "/images/team/a.jpeg?height=200&width=200" },
     { name: "Daniela Martinez", role: "CMO", image: "/images/team/i.png?height=200&width=200" },
     { name: "Alejandro Díaz", role: "CFO", image: "/images/team/man.jpeg?height=200&width=200" },
-    { name: "Luisangel Parra", role: "CIO", image: "/images/team/ar.jpeg?height=200&width=200" },
+    { name: "Luisangel Parra", role: "CIO", image: "/images/team/parra.jpeg?height=200&width=200" },
   ]
 
   return (
