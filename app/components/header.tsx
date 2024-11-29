@@ -18,20 +18,29 @@ export function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-gray-800">ArchiConect</Link>
         <nav>
-          <ul className="flex space-x-6">
-            <li><Link href="/" className="text-gray-600 hover:text-gray-800">Inicio</Link></li>
-            <li><Link href="/sobre-nosotros" className="text-gray-600 hover:text-gray-800">Sobre Nosotros</Link></li>
-            {isLoggedIn && (
-              <li><Link href="/buscar" className="text-gray-600 hover:text-gray-800">Buscar Profesionales</Link></li>
-            )}
-            {isLoggedIn && (
-              <li>
-                <Link href="/reclutamiento" className="text-gray-600 hover:text-gray-800">
-                  Proceso de Reclutamiento
-                </Link>
-              </li>
-            )}
-          </ul>
+          <ul className="flex space-x-1">
+  {[
+    { href: "/", label: "Inicio" },
+    { href: "/sobre-nosotros", label: "Sobre Nosotros" },
+    ...(isLoggedIn ? [
+      { href: "/buscar", label: "Buscar Profesionales" },
+      { href: "/reclutamiento", label: "Proceso de Reclutamiento" }
+    ] : [])
+  ].map(({ href, label }) => (
+    <li key={href}>
+      <Link
+        href={href}
+        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ease-in-out
+          ${pathname === href
+            ? "bg-indigo-100 text-indigo-800"
+            : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+          }`}
+      >
+        {label}
+      </Link>
+    </li>
+  ))}
+</ul>
         </nav>
         {!isLoggedIn && (
           <Link href="/iniciar-sesion">
@@ -42,4 +51,3 @@ export function Header() {
     </header>
   )
 }
-
